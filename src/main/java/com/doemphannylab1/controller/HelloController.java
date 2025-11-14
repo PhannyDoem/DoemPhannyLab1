@@ -10,7 +10,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(){
-        return "Hello, GitHub Actions!";
+        return "Hello, CI/CD!";
     }
 
     @GetMapping("/health")

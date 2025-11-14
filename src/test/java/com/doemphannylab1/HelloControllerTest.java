@@ -22,7 +22,7 @@ public class HelloControllerTest {
     public void testHelloEndpoint() throws Exception {
         mockMvc.perform(get("/api/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello, GitHub Actions!"));
+                .andExpect(content().string("Hello, CI/CD!"));
     }
 
     @Test

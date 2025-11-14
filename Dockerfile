@@ -23,11 +23,8 @@ WORKDIR /app
 # Copy the JAR file from build stage
 COPY --from=build /app/target/DoemPhannyLab1-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port
+# Expose port 8088
 EXPOSE 8088
 
-# Set environment variable for port
-ENV PORT=8088
-
-# Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the application on port 8088
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8088}"]

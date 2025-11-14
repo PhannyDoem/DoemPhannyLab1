@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: doemphannylab1
+    env: java
+    region: singapore
+    plan: free
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/DoemPhannyLab1-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: PORT
+        value: 8088
+      - key: JAVA_VERSION
+        value: 17
